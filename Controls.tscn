@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Final/Background_0.png" type="Texture" id=1]
+[ext_resource path="res://BackgroundMusic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Controls.gd" type="Script" id=3]
+[ext_resource path="res://Main menu.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/Final/Tiles.png" type="Texture" id=5]
+[ext_resource path="res://controls.png" type="Texture" id=6]
+[ext_resource path="res://assets/Final/Salt.png" type="Texture" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Tiles.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 192, 224, 160, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Tiles.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 128, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Tiles.png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 32, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[node name="Controls" type="Sprite"]
+position = Vector2( 702.491, 386.972 )
+scale = Vector2( 1.85549, 1.86552 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 158.786, 38.7163 )
+scale = Vector2( 2.27695, 2.22758 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+format = 1
+
+[node name="Sprite" type="Sprite" parent="TileMap"]
+position = Vector2( -68.0008, -11.1475 )
+scale = Vector2( 0.15594, 0.162985 )
+texture = ExtResource( 6 )
+offset = Vector2( 21.3352, 338.878 )
+
+[node name="BackgroundMusic" parent="." instance=ExtResource( 2 )]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Back" type="Button" parent="."]
+margin_left = -363.504
+margin_top = 47.5276
+margin_right = -265.504
+margin_bottom = 152.528
+rect_scale = Vector2( 1.61769, 2.05199 )
+text = "Back"
+flat = true
+
+[node name="Sprite" type="Sprite" parent="Back"]
+position = Vector2( 12.5176, 50.227 )
+scale = Vector2( 0.470015, 0.236271 )
+texture = ExtResource( 7 )
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
