@@ -3,7 +3,10 @@
 
 # Introduction
 Since im a Holberton School student this game was made as a last year project of the foundations.
-My focus was on creating a game responsive and an entertaining experience for every player. 
+My focus was on creating a game responsive and an entertaining experience for every player.
+
+# Story
+Since my childhood i've always been passionate about playing video games and i've never really been interested into creating one by i wanted to see how a video game is done but since i got to Holberton School and oriented myself as a software engineer i actually became excited about game developing and wanted to create my own and this project was a challenge for myself.
 
 #Overview
 This a 2D game were you play as a wizard character the goal is to kill the enemies and advance to the next level !
